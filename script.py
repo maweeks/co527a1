@@ -2,16 +2,20 @@
 from dataIS import dataPoints, realDataPoints
 from functions import *
 
-# check the import worked
-# print dataPoints[1]
-# print realDataPoints[400]
-# print realDataPoints[400][0]
-# print realDataPoints[60][0]
+# a test plot
+# data = dataPoints
 
+# use the assessment data points
 data = realDataPoints
 
 # generate coeficients
-coef = [0, 0, 0, 0, 0, 0]
+# interpolate value for f(0) = a
+a = getInterpolation(data, 0)
+
+# interpolate value for f(1) = a + b + c + d + e + f
+coefRange = getInterpolation(data, 1)
+
+coef = [a, 0, 0, 0, 0, 0]
 
 # calcualte fitnesses
 print(getFitness(data, coef))
@@ -28,8 +32,3 @@ print(getFitness(data, coef))
 coef = [-0.006, 5000, 70, -65, 1.03, -0.00103]
 print("Excel:")
 print(getFitness(data, coef))
-
-coef = [0, 1, 2, 3, 4, 5]
-coef2 = [0, 1, 2, 3, 4, 5]
-
-print(checkSameSolution(coef, coef2))
