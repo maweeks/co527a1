@@ -30,16 +30,12 @@ def getInterpolation(data, x):
     y1 = data[x1Index][1]
     x2 = data[x2Index][0]
     y2 = data[x2Index][1]
-    print data[x1Index]
-    print(data[x2Index])
 
     y = y1 + (((x - x1) * (y2 - y1)) / (x2 - x1))
-    print(y)
     return y
 
-
 def getSingleFitness(point, coef):
-    return (((getYfromX(point[0], coef) - point[1]) ** 2) / 2)
+    return ((getYfromX(point[0], coef) - point[1]) ** 2)
 
 def getYfromX(x, coef):
     return (coef[0] + (coef[1] * x) + (coef[2] * (x ** 2)) + (coef[3] * (x ** 3)) + (coef[4] * (x ** 4)) + (coef[5] * (x ** 5)))

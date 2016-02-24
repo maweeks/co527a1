@@ -13,7 +13,7 @@ data = realDataPoints
 a = getInterpolation(data, 0)
 
 # interpolate value for f(1) = a + b + c + d + e + f
-coefRange = getInterpolation(data, 1)
+coefSum = getInterpolation(data, 1)
 
 coef = [a, 0, 0, 0, 0, 0]
 
@@ -22,13 +22,24 @@ print(getFitness(data, coef))
 
 # sort by fitness
 
+
 # get best result
 
+
 # print current best coeficients
+a, b, c, d, e, f = coef[0:6]
+print("Best:")
+print("t: " + str(coefSum))
+print("a: " + str(a))
+print("b: " + str(b))
+print("c: " + str(c))
+print("d: " + str(d))
+print("e: " + str(e))
+print("f: " + str(f))
 
-
+# calcualte fitnesses
+print("F: " + str(getFitness(data, coef)))
 
 # excel coeficients
 coef = [-0.006, 5000, 70, -65, 1.03, -0.00103]
-print("Excel:")
-print(getFitness(data, coef))
+print("X: " + str(getFitness(data, coef)))
